@@ -1,78 +1,146 @@
-<html __fvdsurfcanyoninserted="1" class="
-        clickberry-extension
-        clickberry-extension-standalone
-        clickberry-extension
-        clickberry-extension-standalone
-        clickberry-extension
-        clickberry-extension-standalone
-    ">
-
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <!-- 0. Phần icon của website (thay đổi link đến icon nếu bạn muốn sửa nó) -->
-    <link rel="shortcut icon" type="image/png" href="./birthdayCake.png" />
-
-    <!-- 1. Đây là phần title của website -->
-    <title>Happy Birthday</title>
-    <link rel="stylesheet" href="./style.css">
-    <script>
-        window.open = function() {};
-        window.print = function() {};
-        // Support hover state for mobile.
-        if (false) {
-            window.ontouchstart = function() {};
+    <meta charset="UTF-8">
+    <title>CU rây xừn</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+            font-family: Arial, sans-serif;
         }
-    </script>
-    <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
-    <meta content="clickberry-extension-here" />
+
+        /* Khung chính */
+        .container {
+            width: 60vw;
+            max-width: 800px;
+            min-width: 320px;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        /* Tiêu đề sóng */
+        .wave-text {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .wave-text span {
+            display: inline-block;
+            animation: wave 1.5s ease-in-out infinite,
+                       colorShift 4s linear infinite;
+        }
+
+        .wave-text span:nth-child(n) {
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes colorShift {
+            0%   { color: #ff004c; }
+            25%  { color: #ff8c00; }
+            50%  { color: #00bcd4; }
+            75%  { color: #8bc34a; }
+            100% { color: #ff004c; }
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 240px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #00bcd4;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .result {
+            margin-top: 25px;
+            font-size: 20px;
+            color: #004d00;
+        }
+    </style>
 </head>
-
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css" />
-    <div class="container">
-        <!-- 2. Dòng chữ Happy Birthday
-            Nếu bạn muốn thêm chữ vào thì phải thay đổi css tương ứng cho nó -->
-        <div class="balloon">
-            <div><span>H</span></div>
-            <div><span>A</span></div>
-            <div><span>P</span></div>
-            <div><span>P</span></div>
-            <div><span>Y</span></div>
-            <div><span>B</span></div>
-            <div><span>I</span></div>
-            <div><span>R</span></div>
-            <div><span>T</span></div>
-            <div><span>H</span></div>
-            <div><span>D</span></div>
-            <div><span>A</span></div>
-            <div><span>Y</span></div>
-        </div>
-        <div class="avatar">
-            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/352852598_912814986686343_6716499814748820543_n.png?stp=dst-png_s206x206&_nc_cat=110&ccb=1-7&_nc_sid=aee45a&_nc_ohc=8FiCtT-VbnQAX851oIG&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSDU0HrkvEl2AAQ6eJu6VAVGz6b2BnbDyGLHVNeHxIPzA&oe=64A841E0"
-                alt="" class="avatar__img" onclick="showMessage()" />
-            <h1 onclick="showMessage()"  class="avatar__title">Click vào ảnh đi=))</h1>
-        </div>
 
-        <audio id="player " autoplay loop>
-                <source src="./music.mp3 " type="audio/mp3 ">
-            </audio>
+<div class="container">
+
+    <div class="wave-text">
+        <span style="--i:1">C</span>
+        <span style="--i:2">u</span>
+        <span style="--i:3">r</span>
+        <span style="--i:4">a</span>
+        <span style="--i:5">t</span>
+        <span style="--i:6">i</span>
+        <span style="--i:7">o</span>
+        <span style="--i:8">n</span>
+        <span style="--i:9">&nbsp;</span>
+        <span style="--i:10">b</span>
+        <span style="--i:11">y</span>
+        <span style="--i:12">&nbsp;</span>
+        <span style="--i:13">L</span>
+        <span style="--i:14">o</span>
+        <span style="--i:15">g</span>
+        <span style="--i:16">a</span>
+        <span style="--i:17">n</span>
     </div>
-    <script>
-        if (document.location.search.match(/type=embed/gi)) {
-            window.parent.postMessage("resize ", "* ");
-        }
 
-        function showMessage() {
-            swal({
-                title: "Lời chúc chân thành, sâu sắc từ Lực và Trường ", 
-                text: "Chúc mừng sinh nhật, chúc mừng già thêm 1 tuổi. Tuổi mới cái gì cũng mới(mỏ bớt hỗn lại), đặc biệt nhiều tiền:))))) ", // Nội dung lời nhắn
-                button: {
-                    text: "Close ",
-                },
-            });
-        }
-    </script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    <input
+        type="number"
+        id="numberInput"
+        placeholder="Nhập số"
+        onkeydown="handleEnter(event)"
+    >
+
+    <div class="result" id="result"></div>
+
+</div>
+
+<script>
+function handleEnter(event) {
+    if (event.key === "Enter") {
+        calculate();
+    }
+}
+
+function calculate() {
+    const N = parseInt(document.getElementById("numberInput").value);
+    const start = 11;
+    const step = 20;
+
+    if (isNaN(N) || N <= 21) {
+        document.getElementById("result").innerText =
+            "Vui lòng nhập số lớn hơn 21";
+        return;
+    }
+
+    const max = N - 10;
+    const end = start + Math.floor((max - start) / step) * step;
+    const count = Math.floor((end - start) / step) + 1;
+
+    document.getElementById("result").innerHTML = `
+        Start frame: <b>${start}</b><br>
+        End frame: <b>${end}</b><br>
+        👉 Total: <b>${count}</b>
+    `;
+}
+</script>
+
 </body>
-
 </html>
